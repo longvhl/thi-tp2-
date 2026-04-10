@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuê Xe - BikeGo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ===== HEADER (Logo) ===== -->
+    <div class="bg-white text-center py-2">
+        <a href="index.html" class="logo-text">
+            Bike<span> Go </span>
+        </a>
+    </div>
+
+    <!-- ===== NAVIGATION & BANNER ===== -->
+    <div class="banner-container">
+        <div class="spreading-rings">
+            <div class="ring-pos pos-tl"><div class="ring"></div><div class="ring"></div></div>
+            <div class="ring-pos pos-tc"><div class="ring"></div><div class="ring"></div></div>
+            <div class="ring-pos pos-br"><div class="ring"></div><div class="ring"></div></div>
+        </div>
+        
+        <div class="container h-100 position-relative" style="z-index: 2;">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-3 h-100 pt-3 pb-3">
+                    <div class="sidebar-wrapper">
+                        <ul class="nav flex-column sidebar-nav">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="station.html" class="nav-link">Trạm xe</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Đăng nhập</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Đăng ký</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-9 text-center">
+                    <div class="d-flex justify-content-center gap-3 gap-md-5 flex-wrap banner-btn-group">
+                        <a href="rental.html" class="banner-btn active">«« THUÊ XE »»</a>
+                        <a href="payment.html" class="banner-btn">«« TRẢ XE »»</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper" style="min-height: 60vh;">
+        <div class="container mt-4">
+            <div class="card shadow-sm">
+                <!-- HEADER -->
+                <div class="card-header bg-theme-blue">
+                    <h5 style="color: white; margin-bottom: 0;"><i class="fa fa-bicycle"></i> Rental Bike</h5>
+                </div>
+
+                <div class="card-body">
+                    <form action="payment.html" method="GET">
+                        <div class="row">
+                            <!-- ===== CỘT TRÁI: FORM ===== -->
+                            <div class="col-md-6">
+                                <!-- Chọn khu vực -->
+                                <div class="mb-3">
+                                    <label class="form-label">Chọn phường</label>
+                                    <select name="area_slc" id="areaSelect" class="form-select">
+                                        <option value="">-- Chọn phường --</option>                            
+                                        <option value="1">Bến Thành</option>
+                                        <option value="2">Đa Kao</option>
+                                        <option value="3">Tân Định</option>
+                                    </select>
+                                </div>
+
+                                <!-- Chọn trạm -->
+                                <div class="mb-3">
+                                    <label class="form-label">Chọn trạm</label>
+                                    <select name="station_slc" id="stationSelect" class="form-select border-0 shadow-sm">
+                                        <option value="">-- Chọn trạm --</option>
+                                        <option value="101" data-area="1">Trạm Bến Thành (Bến Thành)</option>
+                                        <option value="102" data-area="2">Trạm Landmark 81 (Trạng Trình)</option>
+                                        <option value="103" data-area="1">Trạm Nguyễn Huệ (Bến Thành)</option>
+                                    </select>
+                                </div>
+
+                                <!-- Chọn xe -->
+                                <div class="mb-3">                        
+                                    <label class="form-label">Chọn xe và Biển số</label>
+                                    <div id="bikeList" class="p-3 bg-light rounded border mb-2" style="display:none; max-height: 300px; overflow-y: auto;">
+                                        <div class="d-flex justify-content-between align-items-center p-2 mb-1 bg-white rounded shadow-sm border-start border-4 border-primary">
+                                            <span><i class="fa fa-bicycle text-theme-pink"></i> <b>BK-001</b></span>
+                                            <span class="badge bg-theme-blue">Xe điện</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center p-2 mb-1 bg-white rounded shadow-sm border-start border-4 border-primary">
+                                            <span><i class="fa fa-bicycle text-theme-pink"></i> <b>BK-002</b></span>
+                                            <span class="badge bg-theme-blue">Xe cơ</span>
+                                        </div>
+                                    </div>
+                                    <select name="bike_number" id="bikeNumberSelect" class="form-select border-0 shadow-sm" style="display:none;">
+                                        <option value="">-- Chọn Biển số xe --</option>
+                                        <option value="BK-001">BK-001 (Xe điện)</option>
+                                        <option value="BK-002">BK-002 (Xe cơ)</option>
+                                    </select>
+                                </div>
+
+                                <!-- Button -->
+                                <button class="btn btn-theme rounded-pill fw-bold shadow-sm w-100" type="submit" id="rentBtn" disabled>
+                                    <i class="fa fa-check-circle"></i> Rent Bike
+                                </button>
+                            </div>
+                            
+                            <!-- ===== CỘT PHẢI: HƯỚNG DẪN ===== -->
+                            <div class="col-md-6 text-center">
+                                <img src="aset/image/rental.jpg" class="guide-img" style="max-width: 100%; border-radius: 15px;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="mt-5 text-white" style="background: linear-gradient(to right, #0ea5e9, #ec4899); padding: 25px 0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <img src="aset/image/logoTD.png" alt="Thành Đoàn TP.HCM" style="height: 65px; background: white; padding: 5px; border-radius: 8px;">
+                </div>
+                <div class="col-md-8 text-center text-md-end">
+                    <h6 class="fw-bold mb-2">© Bản quyền thuộc về Thành Đoàn TP.HCM</h6>
+                    <p class="mb-1" style="font-size: 0.9em;"><i class="fa fa-map-marker-alt me-2"></i>Địa chỉ: Số 1 Phạm Ngọc Thạch, Quận 1, TP HCM</p>
+                    <p class="mb-0" style="font-size: 0.9em;"><i class="fa fa-envelope me-2"></i>Email: thanhdoan@tphcm.gov.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+        document.getElementById('areaSelect').addEventListener('change', function() {
+            let area = this.value;
+            let stationSelect = document.getElementById('stationSelect');
+            let options = stationSelect.querySelectorAll('option');
+            options.forEach(opt => {
+                if(opt.value === "") return;
+                if(area === "" || opt.getAttribute('data-area') === area) {
+                    opt.style.display = '';
+                } else {
+                    opt.style.display = 'none';
+                }
+            });
+            stationSelect.value = "";
+        });
+
+        document.getElementById('stationSelect').addEventListener('change', function() {
+            let stationId = this.value;
+            let bikeSelect = document.getElementById('bikeNumberSelect');
+            let bikeList = document.getElementById('bikeList');
+            let rentBtn = document.getElementById('rentBtn');
+
+            if (stationId) {
+                bikeSelect.style.display = 'block';
+                bikeList.style.display = 'block';
+            } else {
+                bikeSelect.style.display = 'none';
+                bikeList.style.display = 'none';
+                rentBtn.disabled = true;
+            }
+        });
+
+        document.getElementById('bikeNumberSelect').addEventListener('change', function() {
+            document.getElementById('rentBtn').disabled = !this.value;
+        });
+    </script>
+</body>
+</html>

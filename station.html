@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trạm Xe - BikeGo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ===== HEADER (Logo) ===== -->
+    <div class="bg-white text-center py-2">
+        <a href="index.html" class="logo-text">
+            Bike<span> Go </span>
+        </a>
+    </div>
+
+    <!-- ===== NAVIGATION & BANNER ===== -->
+    <div class="banner-container">
+        <div class="spreading-rings">
+            <div class="ring-pos pos-tl"><div class="ring"></div><div class="ring"></div></div>
+            <div class="ring-pos pos-tc"><div class="ring"></div><div class="ring"></div></div>
+            <div class="ring-pos pos-br"><div class="ring"></div><div class="ring"></div></div>
+        </div>
+        
+        <div class="container h-100 position-relative" style="z-index: 2;">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-3 h-100 pt-3 pb-3">
+                    <div class="sidebar-wrapper">
+                        <ul class="nav flex-column sidebar-nav">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="station.html" class="nav-link active">Trạm xe</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Đăng nhập</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Đăng ký</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-9 text-center">
+                    <div class="d-flex justify-content-center gap-3 gap-md-5 flex-wrap banner-btn-group">
+                        <a href="rental.html" class="banner-btn">«« THUÊ XE »»</a>
+                        <a href="payment.html" class="banner-btn">«« TRẢ XE »»</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper" style="min-height: 60vh;">
+        <div class="container mt-4" style="min-height: 60vh;">
+            <div class="card shadow-sm">
+                <!-- HEADER -->
+                <div class="card-header bg-theme-blue">
+                    <h5 style="color: white; margin-bottom: 0;"><i class="fa fa-map-marker-alt"></i> Stations</h5>
+                </div>
+
+                <div class="card-body">
+                    <!-- ===== FILTER ===== -->
+                    <div class="row mb-3">
+                        <div class="col-md-4 ms-auto">
+                            <select id="areaFilter" class="form-select">
+                                <option value="all">-- Chọn phường --</option>                  
+                                <option value="1">Bến Thành</option>
+                                <option value="2">Đa Kao</option>
+                                <option value="3">Tân Định</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- ===== LIST STATIONS ===== -->
+                    <div id="stationList">
+                        <!-- Station 1 -->
+                        <div class="station-item p-3 border-bottom cursor-pointer" data-area="1" data-bs-toggle="collapse" data-bs-target="#s101" style="cursor: pointer;">
+                            <i class="fa fa-bicycle text-theme-pink"></i> Trạm Bến Thành
+                        </div>
+                        <div id="s101" class="collapse">
+                            <div class="p-3 bg-light">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="aset/image/BenThanh.png" class="station-img rounded w-100" style="object-fit:cover; height: 180px;">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h5>Trạm Bến Thành</h5>
+                                        <p>📍 Địa chỉ: Quận 1, TP.HCM</p>
+                                        <p>🚴 Xe còn: 12</p>
+                                        <div class="rating-stats text-muted mt-1 mb-3" style="font-size: 0.9em;">
+                                            <span>4.5</span>/5 (90%) - 120 lượt đánh giá
+                                        </div>
+                                        <div class="review-section mt-3 p-3 bg-white rounded border">
+                                            <h6><i class="fa fa-comments"></i> Đánh giá & Bình luận</h6>
+                                            <div class="reviews-list">
+                                                <div class="review-item border-bottom py-2">
+                                                    <div class="d-flex justify-content-between">
+                                                        <small class="fw-bold text-primary">Anh Tuấn</small>
+                                                        <small class="text-muted">30/03/2026</small>
+                                                    </div>
+                                                    <div class="text-warning mb-1" style="font-size: 0.8em;">
+                                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                    </div>
+                                                    <p class="mb-0 small">Xe rất mới, nhân viên hỗ trợ nhiệt tình.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Station 2 -->
+                        <div class="station-item p-3 border-bottom cursor-pointer" data-area="2" data-bs-toggle="collapse" data-bs-target="#s102" style="cursor: pointer;">
+                            <i class="fa fa-bicycle text-theme-pink"></i> Trạm Landmark 81
+                        </div>
+                        <div id="s102" class="collapse">
+                            <div class="p-3 bg-light">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img src="aset/image/landmark81.png" class="station-img rounded w-100" style="object-fit:cover; height: 180px;">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h5>Trạm Landmark 81</h5>
+                                        <p>📍 Địa chỉ: Bình Thạnh, TP.HCM</p>
+                                        <p>🚴 Xe còn: 8</p>
+                                        <div class="rating-stats text-muted mt-1 mb-3" style="font-size: 0.9em;">
+                                            <span>4.8</span>/5 (96%) - 85 lượt đánh giá
+                                        </div>
+                                        <div class="review-section mt-3 p-3 bg-white rounded border">
+                                            <h6><i class="fa fa-comments"></i> Đánh giá & Bình luận</h6>
+                                            <p class="text-center text-muted small mt-2">Chưa có bình luận nào.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="mt-5 text-white" style="background: linear-gradient(to right, #0ea5e9, #ec4899); padding: 25px 0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <img src="aset/image/logoTD.png" alt="Thành Đoàn TP.HCM" style="height: 65px; background: white; padding: 5px; border-radius: 8px;">
+                </div>
+                <div class="col-md-8 text-center text-md-end">
+                    <h6 class="fw-bold mb-2">© Bản quyền thuộc về Thành Đoàn TP.HCM</h6>
+                    <p class="mb-1" style="font-size: 0.9em;"><i class="fa fa-map-marker-alt me-2"></i>Địa chỉ: Số 1 Phạm Ngọc Thạch, Quận 1, TP HCM</p>
+                    <p class="mb-0" style="font-size: 0.9em;"><i class="fa fa-envelope me-2"></i>Email: thanhdoan@tphcm.gov.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+        document.getElementById('areaFilter').addEventListener('change', function() {
+            let area = this.value;
+            let items = document.querySelectorAll('.station-item');
+            items.forEach(item => {
+                if (area === 'all' || item.getAttribute('data-area') === area) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                    // Collapse any open details for hidden items
+                    let target = item.getAttribute('data-bs-target');
+                    let collapseEl = document.querySelector(target);
+                    if (collapseEl.classList.contains('show')) {
+                        bootstrap.Collapse.getInstance(collapseEl).hide();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

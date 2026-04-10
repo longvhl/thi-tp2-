@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - BikeGo</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ===== HEADER (Logo) ===== -->
+    <div class="bg-white text-center py-2">
+        <a href="index.html" class="logo-text">
+            Bike<span> Go </span>
+        </a>
+    </div>
+
+    <!-- ===== NAVIGATION & BANNER ===== -->
+    <div class="banner-container">
+        <div class="spreading-rings">
+            <div class="ring-pos pos-tl"><div class="ring"></div><div class="ring"></div></div>
+            <div class="ring-pos pos-tc"><div class="ring"></div><div class="ring"></div></div>
+            <div class="ring-pos pos-br"><div class="ring"></div><div class="ring"></div></div>
+        </div>
+        
+        <div class="container h-100 position-relative" style="z-index: 2;">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-3 h-100 pt-3 pb-3">
+                    <div class="sidebar-wrapper">
+                        <ul class="nav flex-column sidebar-nav">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="station.html" class="nav-link">Trạm xe</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Đăng nhập</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Đăng ký</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-9 text-center">
+                    <div class="d-flex justify-content-center gap-3 gap-md-5 flex-wrap banner-btn-group">
+                        <a href="rental.html" class="banner-btn">«« THUÊ XE »»</a>
+                        <a href="payment.html" class="banner-btn active">«« TRẢ XE »»</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper" style="min-height: 60vh;">
+        <div class="container mt-4" style="min-height: 60vh;">
+            <div class="card shadow-sm">
+                <!-- HEADER -->
+                <div class="card-header bg-theme-blue">
+                    <h5 style="color: white; margin-bottom: 0;"><i class="fa fa-credit-card"></i> Payment</h5>
+                </div>
+
+                <div class="card-body">
+                    <form action="index.html" method="GET">
+                        <div class="row">
+                            <!-- ===== CỘT TRÁI ===== -->
+                            <div class="col-md-6">
+                                <!-- ===== PHẦN 1: THÔNG TIN XE ===== -->
+                                <div class="info-box mb-4 p-3 bg-light rounded shadow-sm border-start border-4 border-primary">
+                                    <h5><i class="fa fa-bicycle"></i> Thông tin xe đang thuê</h5>
+                                    <hr>
+                                    <p><strong>Loại xe:</strong> Xe điện (BK-001)</p>
+                                    <p><strong>Trạm lấy:</strong> Trạm Bến Thành</p>
+                                    <p><strong>Thời gian bắt đầu:</strong> 09:30 31/03/2026</p>
+                                    <p><strong>Thời gian hiện tại:</strong> 10:15 31/03/2026</p>
+                                    <p><strong>Đơn giá:</strong> 5.000đ + 200đ / phút</p>
+                                    <p><strong>Thời gian thuê:</strong> 45 phút</p>
+                                    <h5 class="text-danger mt-3">
+                                        Tạm tính: <span id="total">14,000</span> đồng
+                                    </h5>
+                                </div>
+
+                                <!-- ===== PHẦN 2: FORM TRẢ XE ===== -->
+                                <div>
+                                    <h5><i class="fa fa-undo"></i> Trả xe</h5>                        
+                                    <!-- Chọn khu vực -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Chọn phường</label>
+                                        <select name="ward_slc" id="areaSelect" class="form-select">
+                                            <option value="">-- Chọn phường --</option>                                
+                                            <option value="1">Bến Thành</option>
+                                            <option value="2">Đa Kao</option>
+                                            <option value="3">Tân Định</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Chọn trạm -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Chọn trạm trả xe</label>
+                                        <select name="return_station" id="stationSelect" class="form-select border-0 shadow-sm">
+                                            <option value="">-- Chọn trạm --</option>
+                                            <option value="101" data-area="1">Trạm Bến Thành (Bến Thành)</option>
+                                            <option value="102" data-area="2">Trạm Landmark 81 (Đa Kao)</option>
+                                            <option value="103" data-area="3">Trạm Tân Định (Tân Định)</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Button -->
+                                    <button class="btn btn-theme rounded-pill fw-bold shadow-sm w-100" type="submit">
+                                        <i class="fa fa-money-bill"></i> Trả xe & Thanh toán
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- ===== CỘT PHẢI ===== -->
+                            <div class="col-md-6 text-center">
+                                <img src="aset/image/payment.jpg" class="guide-img" style="max-width: 100%; border-radius: 15px;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="mt-5 text-white" style="background: linear-gradient(to right, #0ea5e9, #ec4899); padding: 25px 0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <img src="aset/image/logoTD.png" alt="Thành Đoàn TP.HCM" style="height: 65px; background: white; padding: 5px; border-radius: 8px;">
+                </div>
+                <div class="col-md-8 text-center text-md-end">
+                    <h6 class="fw-bold mb-2">© Bản quyền thuộc về Thành Đoàn TP.HCM</h6>
+                    <p class="mb-1" style="font-size: 0.9em;"><i class="fa fa-map-marker-alt me-2"></i>Địa chỉ: Số 1 Phạm Ngọc Thạch, Quận 1, TP HCM</p>
+                    <p class="mb-0" style="font-size: 0.9em;"><i class="fa fa-envelope me-2"></i>Email: thanhdoan@tphcm.gov.vn</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+        document.getElementById('areaSelect').addEventListener('change', function() {
+            let area = this.value;
+            let stationSelect = document.getElementById('stationSelect');
+            let options = stationSelect.querySelectorAll('option');
+            options.forEach(opt => {
+                if(opt.value === "") return;
+                if(area === "" || opt.getAttribute('data-area') === area) {
+                    opt.style.display = '';
+                } else {
+                    opt.style.display = 'none';
+                }
+            });
+            stationSelect.value = "";
+        });
+    </script>
+</body>
+</html>
